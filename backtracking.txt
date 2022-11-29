@@ -1,0 +1,55 @@
+#ej 1
+
+letterCombinations (digits):
+	letras = [" ", "", "abc", ..., "wxyz"]
+	res = []
+	current = ""
+	helper (res, letras, digits, 0, current)
+	return ans
+
+helper (res, letras, digits, start, current):
+	if (len(digits)== start):
+		return res.add(current)
+
+	charPosible = letras[digits[start]]
+	for char in charPosible:
+		helper (res, letras, digits, start+1, current+char)
+		
+#ej 2
+
+generateParenthesis(n) :
+	res = []
+	backtrack(res, "", 0, 0, n):
+
+backtrack(res, current, open, close, max):
+	if (len(current) == 2 * max):
+		return ans.add (current)
+
+	if (open < max):
+		current += "("
+		backtrack(res, current, open+1, close, max)
+		current = current([1...m-1] #Eliminamos el último caracter
+
+	if (close < open):
+		current += ")"
+		backtrack(res, current, open, close+1, max)
+		current = current[1...m-1] #Eliminamos el último caracter
+
+#ej 3
+permute (nums) :
+	res = []
+	visited = [1...n]
+	helper (nums, res, [], visited):
+	return res
+
+helper (nums, res, current, visited):
+	if (len(current) == len(nums)):
+		return res.push(current)
+
+	for i ton:
+		if(!visited[i]):
+			current .push (nums [1])
+			visited[i] = true
+			helper (nums, res, current, visited)
+			current.pop ()
+			visited[i] = false

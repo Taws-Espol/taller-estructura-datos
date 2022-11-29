@@ -1,0 +1,60 @@
+#ej 1
+
+longestCommonPrefix(palabras):
+	if (str == null || strs.length == 0):
+		return ""
+	
+	minLen = -inf
+	
+	for palabra in palabras:
+		minLen = min(minLen, palabra)
+	
+	low = 0
+	high = minLen
+	
+	while (low <= high):
+		mid = (low + high) / 2
+		if (isCommonPrefix(strs, mid))
+            low = mid + 1
+        else
+            high = mid - 1
+	
+	idx = (low + high) / 2)
+	return palabras[0][0..idx]
+
+isCommonPrefix(palabras, len):
+	prefix = palabras[0][0..len]
+	for palabra in palabra:
+		if(!palabra.startsWith(prefix)):
+			return false
+	return true
+
+#ej 2
+
+majorityElement (nums, n):
+	return majorityElementRec (nums, 0, n)
+
+majorityElementRec (nums, low, high):
+	if (low == high):
+		return nums[low]
+		
+	mid = (high + low) / 2
+	left = majorityElementRec (nums, low, mid)
+	right = majorityElementRec (nums, mid+1, high)
+	
+	if (left == right):
+		return left
+		
+	leftCount = countInRange (nums, left, low, high) 
+	rightCount = countInRange (nums, right, low, high)
+	
+	if (leftCount > rightCount):
+		return left 
+	return right
+
+countInRange (nums, current, low, high):
+	count = 0
+	for i=low to high: 
+	if (nums[i] == current):
+		count++
+	return count 
